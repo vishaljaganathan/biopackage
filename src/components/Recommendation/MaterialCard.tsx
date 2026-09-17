@@ -25,16 +25,18 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({
           title: t.tier1BestOverall,
           icon: Award,
           badgeBg: 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-700 shadow-xs',
-          cardBorder: 'border-2 border-emerald-500 shadow-md shadow-emerald-500/10',
+          cardBorder: 'glass-card-emerald',
           accentColor: 'text-emerald-700 dark:text-emerald-400',
+          buttonClass: 'bg-emerald-600 hover:bg-emerald-700 text-white border-transparent shadow-md shadow-emerald-600/20',
         };
       case 'tier2_most_sustainable':
         return {
           title: t.tier2MostSustainable,
           icon: Leaf,
           badgeBg: 'bg-cyan-100 dark:bg-cyan-950/60 text-cyan-800 dark:text-cyan-300 border-cyan-300 dark:border-cyan-700 shadow-xs',
-          cardBorder: 'border border-cyan-400 dark:border-cyan-600 shadow-sm shadow-cyan-500/10',
+          cardBorder: 'glass-card border-cyan-400 dark:border-cyan-600',
           accentColor: 'text-cyan-700 dark:text-cyan-400',
+          buttonClass: 'bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 dark:bg-cyan-900/30 dark:hover:bg-cyan-900/50 dark:text-cyan-300 dark:border-cyan-800 shadow-xs',
         };
       case 'tier3_budget_pick':
       default:
@@ -42,8 +44,9 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({
           title: t.tier3BudgetPick,
           icon: DollarSign,
           badgeBg: 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border-amber-300 dark:border-amber-700 shadow-xs',
-          cardBorder: 'border border-amber-400 dark:border-amber-600 shadow-sm shadow-amber-500/10',
+          cardBorder: 'glass-card border-amber-400 dark:border-amber-600',
           accentColor: 'text-amber-700 dark:text-amber-400',
+          buttonClass: 'bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 dark:bg-amber-900/30 dark:hover:bg-amber-900/50 dark:text-amber-300 dark:border-amber-800 shadow-xs',
         };
     }
   };
@@ -54,7 +57,7 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({
   return (
     <div
       id={`material-card-${material.id}`}
-      className={`relative rounded-2xl bg-white dark:bg-slate-900 ${config.cardBorder} p-4.5 flex flex-col justify-between transition-all duration-300 hover:shadow-lg`}
+      className={`relative rounded-2xl ${config.cardBorder} p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-lg space-y-5`}
     >
       {/* Top Header & Tier Badge */}
       <div className="space-y-3">
@@ -85,13 +88,13 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({
 
         {/* Shelf Life & Carbon Pill */}
         <div className="grid grid-cols-2 gap-2 pt-1">
-          <div className="bg-slate-50 dark:bg-slate-850 p-2.5 rounded-xl border border-slate-200/80 dark:border-slate-800">
+          <div className="bg-emerald-500/5 dark:bg-emerald-400/5 backdrop-blur-md p-2.5 rounded-xl border border-emerald-500/10 dark:border-emerald-400/10">
             <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 block">{t.estimatedShelfLife}</span>
             <span className="text-sm font-extrabold text-cyan-800 dark:text-cyan-300 font-mono">
               ~{score.estimatedShelfLifeDays} {t.days}
             </span>
           </div>
-          <div className="bg-slate-50 dark:bg-slate-850 p-2.5 rounded-xl border border-slate-200/80 dark:border-slate-800">
+          <div className="bg-emerald-500/5 dark:bg-emerald-400/5 backdrop-blur-md p-2.5 rounded-xl border border-emerald-500/10 dark:border-emerald-400/10">
             <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 block">Carbon Footprint</span>
             <span className="text-sm font-extrabold text-emerald-800 dark:text-emerald-300 font-mono">
               {material.carbonFootprintKgCo2PerKg} kg CO₂/kg
@@ -101,7 +104,7 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({
 
         {/* Barrier & Physical Telemetry Grid */}
         <div className="grid grid-cols-2 gap-2 text-xs pt-1">
-          <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800">
+          <div className="flex items-center justify-between p-2 rounded-lg bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 backdrop-blur-md">
             <span className="text-slate-600 dark:text-slate-400 text-[11px] font-medium flex items-center">
               <Wind className="w-3 h-3 mr-1 text-teal-600 dark:text-teal-400" />
               OTR:
@@ -111,7 +114,7 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({
             </span>
           </div>
 
-          <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800">
+          <div className="flex items-center justify-between p-2 rounded-lg bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 backdrop-blur-md">
             <span className="text-slate-600 dark:text-slate-400 text-[11px] font-medium flex items-center">
               <Droplets className="w-3 h-3 mr-1 text-blue-600 dark:text-blue-400" />
               WVTR:
@@ -121,14 +124,14 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({
             </span>
           </div>
 
-          <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800">
+          <div className="flex items-center justify-between p-2 rounded-lg bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 backdrop-blur-md">
             <span className="text-slate-600 dark:text-slate-400 text-[11px] font-medium">Puncture:</span>
             <span className="font-mono font-bold text-slate-800 dark:text-slate-200">
               {material.punctureResistanceN} N
             </span>
           </div>
 
-          <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800">
+          <div className="flex items-center justify-between p-2 rounded-lg bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 backdrop-blur-md">
             <span className="text-slate-600 dark:text-slate-400 text-[11px] font-medium">Base Rate:</span>
             <span className="font-mono font-bold text-amber-700 dark:text-amber-400">
               ₹{material.costPerKgInr}/kg
@@ -186,7 +189,7 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({
         <button
           id={`source-material-btn-${material.id}`}
           onClick={() => onSourceMaterial(material.id)}
-          className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center space-x-2 transition-all shadow-md shadow-emerald-600/20 active:scale-[0.99]"
+          className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center space-x-2 transition-all active:scale-[0.99] ${config.buttonClass}`}
         >
           <span>{t.sourceMaterial}</span>
           <ArrowRight className="w-3.5 h-3.5" />

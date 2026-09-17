@@ -13,7 +13,8 @@ import {
   HelpCircle,
   Clock,
   Droplets,
-  Wind
+  Wind,
+  Box
 } from 'lucide-react';
 import { Commodity, PriorityWeights, TransitClimateConfig, Language, MaterialScore } from './types';
 import { COMMODITIES } from './data/commodities';
@@ -248,7 +249,7 @@ export function App() {
         {activeStep > 1 && (
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 shadow-2xs flex flex-wrap items-center justify-between gap-3 text-xs">
             <div className="flex items-center space-x-3">
-              <span className="text-xl">{selectedCommodity.icon}</span>
+              <span className="text-2xl filter drop-shadow mr-1">{selectedCommodity.icon}</span>
               <div>
                 <span className="font-extrabold text-slate-900 dark:text-slate-100">
                   {selectedCommodity.name}
@@ -284,7 +285,7 @@ export function App() {
           <div className="space-y-6 animate-in fade-in duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* Left Column: Commodity Picker & Baseline Specs (7 cols) */}
-              <div className="lg:col-span-7 space-y-4">
+              <div className="lg:col-span-7 space-y-6">
                 <CommoditySelector
                   selectedCommodity={selectedCommodity}
                   onSelectCommodity={setSelectedCommodity}
@@ -294,7 +295,7 @@ export function App() {
               </div>
 
               {/* Right Column: Climate Controls & Priority Triad (5 cols) */}
-              <div className="lg:col-span-5 space-y-4">
+              <div className="lg:col-span-5 space-y-6">
                 <ClimateTransitSliders
                   transit={transit}
                   onChange={setTransit}
@@ -354,7 +355,7 @@ export function App() {
             </div>
 
             {/* 3 Ranked Tier Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 pt-4">
               {topThreeScores.map((score) => (
                 <MaterialCard
                   key={score.material.id}

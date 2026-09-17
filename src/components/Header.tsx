@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Sparkles, FileText, Globe, Zap, Sun, Moon } from 'lucide-react';
+import { ShieldCheck, Sparkles, FileText, Globe, Zap, Sun, Moon, Leaf, Box, Flame, Package } from 'lucide-react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../i18n/translations';
 
@@ -122,30 +122,30 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="preset-mango-btn"
               onClick={() => onSelectPreset('mango')}
-              className="px-2.5 py-1 text-xs font-medium rounded-lg bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 dark:bg-slate-950 dark:hover:bg-emerald-950/40 dark:text-slate-300 dark:hover:text-emerald-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 transition-all flex items-center whitespace-nowrap shadow-2xs"
+              className="px-2.5 py-1 text-xs font-medium rounded-lg bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 dark:bg-slate-950 dark:hover:bg-emerald-950/40 dark:text-slate-300 dark:hover:text-emerald-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 transition-all flex items-center whitespace-nowrap shadow-sm"
             >
-              🥭 {t.presetMango}
+              <span className="mr-1.5 text-sm">🥭</span> {t.presetMango}
             </button>
             <button
               id="preset-paneer-btn"
               onClick={() => onSelectPreset('paneer')}
-              className="px-2.5 py-1 text-xs font-medium rounded-lg bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 dark:bg-slate-950 dark:hover:bg-emerald-950/40 dark:text-slate-300 dark:hover:text-emerald-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 transition-all flex items-center whitespace-nowrap shadow-2xs"
+              className="px-2.5 py-1 text-xs font-medium rounded-lg bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 dark:bg-slate-950 dark:hover:bg-emerald-950/40 dark:text-slate-300 dark:hover:text-emerald-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 transition-all flex items-center whitespace-nowrap shadow-sm"
             >
-              🧀 {t.presetPaneer}
+              <span className="mr-1.5 text-sm">🧀</span> {t.presetPaneer}
             </button>
             <button
               id="preset-spices-btn"
               onClick={() => onSelectPreset('spices')}
-              className="px-2.5 py-1 text-xs font-medium rounded-lg bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 dark:bg-slate-950 dark:hover:bg-emerald-950/40 dark:text-slate-300 dark:hover:text-emerald-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 transition-all flex items-center whitespace-nowrap shadow-2xs"
+              className="px-2.5 py-1 text-xs font-medium rounded-lg bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 dark:bg-slate-950 dark:hover:bg-emerald-950/40 dark:text-slate-300 dark:hover:text-emerald-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 transition-all flex items-center whitespace-nowrap shadow-sm"
             >
-              🌿 {t.presetSpices}
+              <span className="mr-1.5 text-sm">🌿</span> {t.presetSpices}
             </button>
             <button
               id="preset-strawberries-btn"
               onClick={() => onSelectPreset('strawberries')}
-              className="px-2.5 py-1 text-xs font-medium rounded-lg bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 dark:bg-slate-950 dark:hover:bg-emerald-950/40 dark:text-slate-300 dark:hover:text-emerald-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 transition-all flex items-center whitespace-nowrap shadow-2xs"
+              className="px-2.5 py-1 text-xs font-medium rounded-lg bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 dark:bg-slate-950 dark:hover:bg-emerald-950/40 dark:text-slate-300 dark:hover:text-emerald-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-300 transition-all flex items-center whitespace-nowrap shadow-sm"
             >
-              🍓 {t.presetStrawberries}
+              <span className="mr-1.5 text-sm">🍓</span> {t.presetStrawberries}
             </button>
           </div>
         </div>

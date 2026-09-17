@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Sliders, RotateCcw, Droplets, Wind, Activity, Flame, ShieldAlert, Check } from 'lucide-react';
+import { Search, Sliders, RotateCcw, Droplets, Wind, Activity, Flame, ShieldAlert, Check, Leaf, Box, Package } from 'lucide-react';
 import { Commodity, Language } from '../../types';
 import { COMMODITIES } from '../../data/commodities';
 import { TRANSLATIONS } from '../../i18n/translations';
@@ -90,7 +90,7 @@ export const CommoditySelector: React.FC<CommoditySelectorProps> = ({
       </div>
 
       {/* Commodity Card Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
         {filteredCommodities.map((item) => {
           const isSelected = item.id === selectedCommodity.id;
           return (
@@ -113,7 +113,7 @@ export const CommoditySelector: React.FC<CommoditySelectorProps> = ({
                 </div>
               )}
               <div className="flex items-start space-x-2.5">
-                <span className="text-2xl filter drop-shadow group-hover:scale-110 transition-transform">
+                <span className="text-3xl filter drop-shadow group-hover:scale-110 transition-transform mr-1">
                   {item.icon}
                 </span>
                 <div className="min-w-0 flex-1">
@@ -149,7 +149,7 @@ export const CommoditySelector: React.FC<CommoditySelectorProps> = ({
       <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 shadow-sm space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-2.5 border-b border-slate-100 dark:border-slate-800">
           <div className="flex items-center space-x-2.5">
-            <span className="text-2xl">{selectedCommodity.icon}</span>
+            <span className="text-3xl filter drop-shadow mr-1">{selectedCommodity.icon}</span>
             <div>
               <div className="flex items-center space-x-2">
                 <h3 className="text-sm font-extrabold text-slate-900 dark:text-slate-100">
